@@ -1,19 +1,12 @@
 package cal;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
-import javax.swing.text.html.parser.Parser;
-import java.beans.Expression;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 /**
  * Created by US20280 on 2/21/2017.
  */
 public class model {
-    String[] characters = new String[]{"+","-","*","/","cc","="};
+    String[] characters = new String[]{"+","-","*","/","=","aa"};
+    String e = "";
 
     public boolean CharacterCheck(String host){
         for(int i = 0; i < characters.length; i++){
@@ -44,4 +37,23 @@ public class model {
         return result;
     }
 
+    public String OutputText(String signal, String input, Integer inputA){
+
+        if(signal.equals("num")){
+            e += input;
+        }else if (signal.equals("sign")){
+            e += " ";
+            e += input;
+            e += " ";
+        }else if (signal.equals("final")){
+            String f = Integer.toString(inputA);
+            e = f + " " + input + " ";
+        }else if (signal.equals("clear")){
+            e = "";
+        }else if (signal.equals("=")){
+            e = "" + inputA;
+        }
+
+        return e;
+    }
 }

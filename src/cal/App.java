@@ -123,7 +123,7 @@ public class App extends JFrame{
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                clickinjecter("cc");
+                clickinjecter("aa");
             }
         });
         minus.addMouseListener(new MouseAdapter() {
@@ -134,7 +134,6 @@ public class App extends JFrame{
             }
         });
         times.addMouseListener(new MouseAdapter() {
-            @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 clickinjecter("*");
